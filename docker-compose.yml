@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  pgdb:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: mateuszkowalke
+      POSTGRES_PASSWORD: Kowalkem2@
+      POSTGRES_DB: muzyka_niezalezna
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    depends_on: [pgdb]
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
+    # for production use:
+    # gunicorn muzyka_niezalezna.wsgi:application --bind 0.0.0.0:8000
+
+volumes:
+  pgdata:

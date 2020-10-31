@@ -1,0 +1,164 @@
+body {
+  background-color: azure;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  color: #294b0e;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 5px;
+}
+img {
+  display: inline-block;
+  padding: 10px;
+}
+.img-profile {
+  border-radius: 150px;
+}
+.img-link {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  margin: 0;
+}
+.img-link:focus {
+  border: none;
+  margin: 0;
+  background: none;
+}
+.img-link:hover {
+  border: none;
+  margin: 0;
+  background: none;}
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  margin: 1px;
+  font-size: 20px;
+  line-height: 35px;
+  border: 2px solid #BAE498;
+  border-radius: 5px;
+}
+a:link {
+  color: #417417;
+}
+a:visited {
+  color: #437A16;
+}
+a:focus {
+  border: 3px solid #95be73;
+  margin: 0;
+  background: #BAE498;
+}
+a:hover {
+  border: 3px solid #a0d47a;   
+  margin: 0;
+  background: #CDFEAA;
+}
+a:active {
+  background: #265301;
+  color: #CDFEAA;
+}
+button {
+  color: #417417;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 2px 1px 0;
+  margin: 1px;
+  font-size: 20px;
+  line-height: 35px;
+  border: 2px solid #BAE498;
+  border-radius: 5px;
+}
+button:focus {
+  border: 3px solid #95be73;
+  margin: 0;
+  background: #BAE498;
+}
+button:hover {
+  border: 3px solid #a0d47a;   
+  margin: 0;
+  background: #CDFEAA;
+}
+.helptext {
+  font-size: 12px;
+}
+header {
+  background-color: #95be73;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+header ul {
+  float: right;
+}
+sidebar {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+main {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+main ul li a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 25px;
+  border: none;
+}
+main ul li a:link {
+  color: #417417;
+}
+main ul li a:visited {
+  color: #437A16;
+}
+main ul li a:focus {
+  border: none;
+  margin: 0;
+  background: #BAE498;
+}
+main ul li a:hover { 
+  border: none;
+  margin: 0;
+  background: #CDFEAA;
+}
+main ul li a:active {
+  background: #265301;
+  color: #CDFEAA;
+}
+footer {
+  grid-column: 1 / -1;
+  grid-row: 4 / span 1;
+}
+@media (min-width: 640px) {
+  body {
+    max-width: 800px;
+    margin: auto;
+  }
+  header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+  sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  main {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+  }
+  footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / span 1;
+  }
+}

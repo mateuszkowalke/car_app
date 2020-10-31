@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block main %}
+<div class="">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="">
+            <legend class="">Zaloguj się</legend>
+            {{ form }}
+        </fieldset>
+        <div class="">
+            <button class="" type="submit">Zaloguj się</button>
+            <small class=""><a href="{% url 'users:password-reset' %}">Zapomniałeś/aś hasła?</a></small>
+        </div>
+    </form>
+    <div class="">
+        <small class="">Potrzebujesz konta? <a class="" href="{% url 'users:register' %}">Zarejestruj się</a></small>
+    </div>
+</div>
+{% endblock %}

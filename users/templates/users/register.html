@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block main %}
+<div class="">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="">
+            <legend class="">Rejestracja użytkownika</legend>
+            {{ form }}
+        </fieldset>
+        <div class="">
+            <button class="" type="submit">Zarejestruj się</button>
+        </div>
+    </form>
+    <div class="">
+        <small class="">Masz już konto?
+            <a class="" href="{% url 'users:login' %}">
+                Zaloguj się
+            </a>
+        </small>
+    </div>
+</div>
+{% endblock %}

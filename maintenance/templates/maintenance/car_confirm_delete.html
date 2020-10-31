@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block main %}
+<main>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h4>Czy na pewno chcesz usunąć samochód "{{ car }}"?</h4>
+        <button class="" type="submit" value="Submit">Usuń</button>
+        <a href="{% url 'maintenance:car-detail' object.id %}" class="">Wróć</a>
+    </form>
+</main>
+{% endblock %}

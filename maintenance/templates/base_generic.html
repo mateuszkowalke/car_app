@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "maintenance/styles.css" %}">
+    <title>{% if title %}{{ title }}{% else %}Serwisuj, nie naprawiaj!!!{% endif %}</title>
+</head>
+
+<body>
+    {% block header %}
+    <header>
+        <a class="img-link" href="{% url 'maintenance:index' %}">
+            <img srcset="{% static 'maintenance/header_img.png' %} 507w, {% static 'maintenance/header_img_mobile.png' %} 127w"
+                sizes="(min-width: 640px) 507px, 127px" src="{% static 'maintenance/header_img.png' %}" alt="Car photo">
+        </a>
+        <ul>
+            {% if user.is_authenticated %}
+            <li class="">
+                <a class="" href="{% url 'users:profile' %}">Profil</a>
+            </li>
+            <li class="">
+                <a class="" href="{% url 'users:logout' %}">Wyloguj się</a>
+            </li>
+            {% else %}
+            <li class="">
+                <a class="" href="{% url 'users:login' %}">Zaloguj się</a>
+            </li>
+            <li class="">
+                <a class="" href="{% url 'users:register' %}">Zarejestruj się</a>
+            </li>
+            {% endif %}
+        </ul>
+    </header>
+    {% endblock %}
+    {% block sidebar %}
+    <sidebar>
+        <nav class="">
+            <ul class="">
+                <li class="">
+                    <a href="{% url 'maintenance:cars' %}">Lista samochodów</a>
+                </li>
+                <li class="">
+                    <a href="{% url 'maintenance:car-create' %}">Dodaj samochód</a>
+                </li>
+            </ul>
+        </nav>
+    </sidebar>
+    {% endblock %}
+    {% block main %}
+    <main>
+        Main content
+    </main>
+    {% endblock %}
+    {% block footer %}
+    <footer>
+        <p>Quick and dirty by Mateusz Kowalke :D</p>
+    </footer>
+    {% endblock %}
+    <script src="{% static "maintenance/script.js" %}"></script>
+</body>
+
+</html>

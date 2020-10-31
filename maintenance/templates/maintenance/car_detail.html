@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block main %}
+<main>
+    <h3 class="">Szczegóły samochodu:</h3>
+    <h1>{{ car }}</h1>
+    <dl>
+        {% for key, value in car.get_fields_for_detail_template %}
+        <dt>{{ key }}</dt>
+        <dd>{{ value }}</dd>
+        {% endfor %}
+    </dl>
+    <div>
+        <a class="" href="{% url 'maintenance:car-update' object.id %}">Zmień dane</a></br>
+        <a class="" href="{% url 'maintenance:car-delete' object.id %}">Usuń samochód</a>
+    </div>
+</main>
+{% endblock %}
