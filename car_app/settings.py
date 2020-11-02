@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -142,3 +143,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('GMAIL_USERNAME', '')
 EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_PASSWORD', '')
+
+django_heroku.settings(locals())

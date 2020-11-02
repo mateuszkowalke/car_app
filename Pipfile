@@ -15,6 +15,7 @@ faker = "*"
 django-extensions = "*"
 django = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"

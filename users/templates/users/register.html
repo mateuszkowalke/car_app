@@ -6,7 +6,7 @@
         {% csrf_token %}
         <fieldset class="">
             <legend class="">Rejestracja użytkownika</legend>
-            {{ form }}
+            {{ form.as_table }}
         </fieldset>
         <div class="">
             <button class="" type="submit">Zarejestruj się</button>
